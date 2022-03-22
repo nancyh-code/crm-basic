@@ -19,7 +19,6 @@ const Formulario = () => {
       .integer("Número no válido")
       .positive("Número no válido")
       .min(8, "Se requieren al menos 8 digitos"),
-    // notas: yup.string().required(),
   });
   const handleSubmit = (valores) => {
     console.log(valores);
