@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <div className="md:flex md:min-h-screen">
       <div className="md:w-1/5 bg-sky-600 px-5 py-10">
-        <h2 className="text-3xl text-slate-900 font-bold text-center">
+        <h2 className="text-3xl text-slate-800 font-bold text-center">
           CRM-Clientes
         </h2>
         <nav className="mt-10">
@@ -31,7 +31,7 @@ const Layout = () => {
           </Link>
         </nav>
       </div>
-      <div className="md:w-3/5">
+      <div className="md:w-4/5 p-10 md:h-screen overflow-scroll">
         <Outlet />
       </div>
     </div>
