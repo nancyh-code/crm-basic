@@ -7,14 +7,14 @@ const Layout = () => {
   return (
     <div className="md:flex md:min-h-screen">
       <div className="md:w-1/5 bg-sky-600 px-5 py-10">
-        <h2 className="text-3xl text-slate-900 font-bold text-center">
+        <h2 className="text-3xl text-slate-900 font-extrabold text-center">
           CRM-Clientes
         </h2>
         <nav className="mt-10">
           <Link
             className={`${
-              urlActual === "/clientes" ? "text-slate-600" : "text-slate-900"
-            } text-2xl block mt-2 hover:text-slate-600`}
+              urlActual === "/clientes" ? "text-slate-700" : "text-slate-900"
+            } text-2xl block mt-2 font-semibold hover:text-slate-700`}
             to="/clientes"
           >
             Clientes
@@ -22,16 +22,16 @@ const Layout = () => {
           <Link
             className={`${
               urlActual === "/clientes/nuevo"
-                ? "text-slate-600"
+                ? "text-slate-700"
                 : "text-slate-900"
-            } text-2xl block mt-2 hover:text-slate-600`}
+            } text-2xl block mt-2 font-semibold hover:text-slate-700`}
             to="/clientes/nuevo"
           >
             Nuevo Cliente
           </Link>
         </nav>
       </div>
-      <div className="md:w-4/5 p-10">
+      <div className="md:w-/5 p-10">
         <Outlet />
       </div>
     </div>

@@ -1,8 +1,44 @@
 {
   "clientes": [
     {
-      "id": 1,
-      "nombre": "Jane"
+      "nombre": "Nancy Hernandez",
+      "empresa": "ZZZ",
+      "email": "hernandezyanez@hotmail.com",
+      "telefono": "+56975742361",
+      "notas": "Una nota más",
+      "id": 1
+    },
+    {
+      "nombre": "Nancy Hernandez",
+      "empresa": "ZZZ",
+      "email": "hernandezyanez@hotmail.com",
+      "telefono": "+56975742361",
+      "notas": "Una nota más",
+      "id": 2
+    },
+    {
+      "nombre": "Karen",
+      "empresa": "Karen Desing",
+      "email": "karen@nod.com",
+      "telefono": "4723985",
+      "notas": "Compra de Toner",
+      "id": 3
+    },
+    {
+      "nombre": "Luis Medina",
+      "empresa": "Luigi`s",
+      "email": "luigi@med.com",
+      "telefono": "4723985",
+      "notas": "Cliente de papel",
+      "id": 4
+    },
+    {
+      "nombre": "Paulina",
+      "empresa": "Paulina Vet",
+      "email": "pau@pau.com",
+      "telefono": "4723985",
+      "notas": "Clientes de papel y toner",
+      "id": 5
     }
   ]
 }
