@@ -2,7 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 const Clientes = ({ cliente }) => {
   const navigate = useNavigate();
+
   const { nombre, empresa, email, telefono, notas, id } = cliente;
+
   return (
     <tr className="border-b hover:bg-gray-200">
       <td className="p-3">{nombre}</td>
@@ -28,6 +30,7 @@ const Clientes = ({ cliente }) => {
         <button
           type="button"
           className="bg-sky-600 hover:bg-sky-700 block w-full text-white p-2 uppercase font-bold text-xs mt-2"
+          onClick={() => navigate(`/clientes/editar/${id}`)}
         >
           Editar
         </button>

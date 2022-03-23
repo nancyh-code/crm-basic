@@ -39,6 +39,14 @@
       "telefono": "4723985",
       "notas": "Clientes de papel y toner",
       "id": 5
+    },
+    {
+      "nombre": "Charles",
+      "empresa": "ZZZ",
+      "email": "hernandezyanez@hotmail.com",
+      "telefono": "+56975742361",
+      "notas": "",
+      "id": 6
     }
   ]
 }

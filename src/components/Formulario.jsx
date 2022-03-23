@@ -150,7 +150,7 @@ const Formulario = () => {
               <input
                 type="submit"
                 value="Agregar Cliente"
-                className=" mt-5 w-full p-3 bg-sky-600 text-slate-900 font-bold uppercase text-lg "
+                className=" mt-5 w-full p-3 bg-sky-600 text-slate-50 font-bold uppercase text-lg "
               />
             </Form>
           );

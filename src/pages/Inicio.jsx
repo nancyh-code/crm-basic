@@ -21,7 +21,7 @@ const Inicio = () => {
   return (
     <>
       <h1 className="font-black text-3xl text-sky-700">Clientes</h1>
-      <p className="mt-3">Administar tus clientes</p>
+      <p className="mt-3 text-lg">Administar tus clientes</p>
       <table className="w-full mt-5 table-auto shadow bg-white">
         <thead className="bg-sky-600 text-white">
           <tr>
