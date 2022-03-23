@@ -18,6 +18,27 @@ const Inicio = () => {
     obtenerClientesAPI();
   }, []);
 
+  const handleEliminar = async (id) => {
+    const confirmar = confirm(
+      "¿Seguro que deseas eliminar el registro del cliente?"
+    );
+    if (confirmar) {
+      try {
+        const url = `http://localhost:4000/clientes/${id}`;
+        const respuesta = await fetch(url, {
+          method: "DELETE",
+        });
+        await respuesta.json();
+        const arrayClientes = clientes.filter((cliente) => cliente.id !== id);
+        setClientes(arrayClientes);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    console.log(confirmar);
+    // setClientes([]);
+  };
+
   return (
     <>
       <h1 className="font-black text-3xl text-sky-700">Clientes</h1>
@@ -33,7 +54,11 @@ const Inicio = () => {
         </thead>
         <tbody>
           {clientes.map((cliente) => (
-            <Clientes key={cliente.id} cliente={cliente} />
+            <Clientes
+              key={cliente.id}
+              cliente={cliente}
+              handleEliminar={handleEliminar}
+            />
           ))}
         </tbody>
       </table>

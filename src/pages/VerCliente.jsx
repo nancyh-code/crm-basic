@@ -7,7 +7,9 @@ const VerCliente = () => {
   const [cliente, setCliente] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+
   console.log(id);
+
   useEffect(() => {
     const obtenerClienteAPI = async () => {
       // setIsLoading(!isLoading);

@@ -1,17 +1,17 @@
 {
   "clientes": [
     {
-      "nombre": "Nancy Hernandez",
+      "nombre": "Rosa",
       "empresa": "ZZZ",
-      "email": "hernandezyanez@hotmail.com",
+      "email": "rosa@hotmail.com",
       "telefono": "+56975742361",
       "notas": "Una nota más",
       "id": 1
     },
     {
-      "nombre": "Nancy Hernandez",
+      "nombre": "Nancy ",
       "empresa": "ZZZ",
-      "email": "hernandezyanez@hotmail.com",
+      "email": "hernanz@hotmail.com",
       "telefono": "+56975742361",
       "notas": "Una nota más",
       "id": 2
@@ -41,12 +41,12 @@
       "id": 5
     },
     {
-      "nombre": "Charles",
-      "empresa": "ZZZ",
-      "email": "hernandezyanez@hotmail.com",
-      "telefono": "+56975742361",
-      "notas": "",
-      "id": 6
+      "nombre": "Juan",
+      "empresa": "Programa conmigo",
+      "email": "lupercox@gmail.com",
+      "telefono": "444444444444",
+      "notas": "Servicios en la nube",
+      "id": 8
     }
   ]
 }

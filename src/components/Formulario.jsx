@@ -3,8 +3,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { string } from "yup/lib/locale";
+import Spinner from "./Spinner";
 
-const Formulario = () => {
+const Formulario = ({ cliente, isLoading }) => {
   const navigate = useNavigate();
   const nuevoClienteSchema = yup.object().shape({
     nombre: yup
@@ -22,18 +23,31 @@ const Formulario = () => {
       .positive("Número no válido")
       .min(8, "Se requieren al menos 8 digitos"),
   });
+
   const handleSubmit = async (valores) => {
     try {
-      const url = "http://localhost:4000/clientes";
-      const respuesta = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(valores),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      console.log(respuesta);
+      let respuesta;
+      if (cliente.id) {
+        //Editando un registro
+        const url = `http://localhost:4000/clientes/${cliente.id}`;
+        respuesta = await fetch(url, {
+          method: "PUT",
+          body: JSON.stringify(valores),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      } else {
+        //Nuevo Registro
+        const url = "http://localhost:4000/clientes";
+        respuesta = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(valores),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      }
       const resultado = await respuesta.json();
       console.log(resultado);
 
@@ -43,19 +57,23 @@ const Formulario = () => {
     }
   };
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <div className="bg-white mt-10 px-5 py-6 rounded-md shadow-md md:w-3/4 lg-w-48 mx-auto">
-      <h2 className="text-gray-600 font-bold text-xl uppercase text-center">
-        Agregar Cliente
-      </h2>
+      <h1 className="text-gray-600 font-bold text-xl uppercase text-center">
+        {cliente?.nombre ? "Editar Cliente" : "Agregar Cliente"}
+      </h1>
       <Formik
         initialValues={{
-          nombre: "",
-          empresa: "",
-          email: "",
-          telefono: "",
-          notas: "",
+          //  Es igual al operador ternario nombre: cliente.nombre ? cliente.nombre : "",
+          nombre: cliente?.nombre ?? "",
+          empresa: cliente?.empresa ?? "",
+          email: cliente?.email ?? "",
+          telefono: cliente?.telefono ?? "",
+          notas: cliente?.notas ?? "",
         }}
+        enableReinitialize={true}
         onSubmit={async (valores, { resetForm }) => {
           await handleSubmit(valores);
           resetForm();
@@ -149,7 +167,7 @@ const Formulario = () => {
               </div>
               <input
                 type="submit"
-                value="Agregar Cliente"
+                value={cliente?.nombre ? "Editar Cliente" : "Agregar Cliente"}
                 className=" mt-5 w-full p-3 bg-sky-600 text-slate-50 font-bold uppercase text-lg "
               />
             </Form>
@@ -160,4 +178,9 @@ const Formulario = () => {
   );
 };
 
+//The defaultProps is a React component property that allows you to set default values for the props argument. If the prop property is passed, it will be changed.
+Formulario.defaultProps = {
+  cliente: {},
+  isLoading: false,
+};
 export default Formulario;
