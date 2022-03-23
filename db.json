@@ -1,20 +1,12 @@
 {
   "clientes": [
     {
-      "nombre": "Rosa",
+      "nombre": "Rosa Actualizada",
       "empresa": "ZZZ",
       "email": "rosa@hotmail.com",
       "telefono": "+56975742361",
       "notas": "Una nota más",
       "id": 1
-    },
-    {
-      "nombre": "Nancy ",
-      "empresa": "ZZZ",
-      "email": "hernanz@hotmail.com",
-      "telefono": "+56975742361",
-      "notas": "Una nota más",
-      "id": 2
     },
     {
       "nombre": "Karen",

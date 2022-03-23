@@ -7,13 +7,13 @@ const EditarCliente = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
-  console.log(id);
+  // console.log(id);
 
   useEffect(() => {
     const obtenerClienteAPI = async () => {
       // setIsLoading(!isLoading);
       try {
-        const url = `http://localhost:4000/clientes/${id}`;
+        const url = `${import.meta.env_API_URL}/${id}`;
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         setCliente(resultado);

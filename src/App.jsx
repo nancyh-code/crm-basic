@@ -7,6 +7,7 @@ import EditarCliente from "./pages/EditarCliente";
 import VerCliente from "./pages/VerCliente";
 
 function App() {
+  // console.log(import.meta.env_API_URL);
   return (
     <BrowserRouter>
       <Routes>
