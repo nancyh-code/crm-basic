@@ -31,7 +31,7 @@ const Layout = () => {
           </Link>
         </nav>
       </div>
-      <div className="md:w-3/5">
+      <div className="md:w-4/5 p-10">
         <Outlet />
       </div>
     </div>
